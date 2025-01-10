@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2755446429015804099}
   - component: {fileID: 8545041155868424650}
   - component: {fileID: 1346321014345521234}
+  - component: {fileID: 6001353525479630465}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -102,3 +103,24 @@ MonoBehaviour:
   _plantPrefab: {fileID: 7695886284858861525, guid: b186834cf2d7a3c4b8d8f98f4a7bda03, type: 3}
   _numSeeds: 5
   _plantCountUI: {fileID: 0}
+--- !u!95 &6001353525479630465
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8265084854932149709}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 13a4d7cee31d68c45a57dd03c3fdd2f8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
