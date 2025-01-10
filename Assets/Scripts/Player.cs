@@ -13,21 +13,30 @@ public class Player : MonoBehaviour
 
     private void Start ()
     {
-        
+        // id rather use getComponent for the transform
+        _playerTransform = GetComponent<Transform>();
     }
 
     private void Update()
     {
         // move the player
         MoveFromAxis();
+
+        // plant a seed if the player pressed space
+        
     }
 
+    /// <summary>
+    /// plants a seed prefab at the player location.
+    /// </summary>
     public void PlantSeed ()
     {
         
     }
-
     
+    /// <summary>
+    /// translates the player based on input axis floats.
+    /// </summary>
     private void MoveFromAxis()
     {
         // i like to use the axis floats for movement becayse they let me use the arrow keys 
@@ -42,6 +51,5 @@ public class Player : MonoBehaviour
 
         //transform the player by the move direction * speed fixed with deltatime
         _playerTransform.Translate(moveDirection * _speed * Time.deltaTime);
-
     }
 }
