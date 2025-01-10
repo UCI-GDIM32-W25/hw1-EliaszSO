@@ -937,7 +937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plantedText: {fileID: 543629224}
-  _remainingText: {fileID: 1554837977}
+  _remainingText: {fileID: 179384848}
 --- !u!1001 &7794979932336710821
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -946,6 +946,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1346321014345521234, guid: 37185d6fa6ead904ba354f8c0d2cbb23, type: 3}
+      propertyPath: _plantCountUI
+      value: 
+      objectReference: {fileID: 1657858111}
     - target: {fileID: 2755446429015804099, guid: 37185d6fa6ead904ba354f8c0d2cbb23, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5652537

@@ -5,18 +5,27 @@ public class Player : MonoBehaviour
     [SerializeField] private float _speed = 1.0f;
     [SerializeField] private Transform _playerTransform;
     [SerializeField] private GameObject _plantPrefab;
+    // the max seeds that the player starts out with
     [SerializeField] private int _numSeeds = 5; 
     [SerializeField] private PlantCountUI _plantCountUI;
 
+    // the number of seeds the player has on them
+    private int _numSeedsLeft;
+
     // not entirely sure why i would want these variables?
     // they could be usefull but i already have _numSeeds
-    private int _numSeedsLeft;
     private int _numSeedsPlanted;
 
     private void Start ()
     {
         // id rather use getComponent for the transform
         _playerTransform = GetComponent<Transform>();
+
+        // have player seed count match start count
+        _numSeedsLeft = _numSeeds;
+
+        // call ui update so it has the right values
+        _plantCountUI.UpdateSeeds(_numSeedsLeft, 0);
     }
 
     private void Update()
@@ -25,13 +34,9 @@ public class Player : MonoBehaviour
         MoveFromAxis();
 
         // plant a seed if the player pressed space and there are seeds left
-        if (_numSeeds > 0 && Input.GetKeyDown(KeyCode.Space))
+        if (_numSeedsLeft > 0 && Input.GetKeyDown(KeyCode.Space))
         {
-            // spawn plant prefab
-            GameObject plant = Instantiate(_plantPrefab);
-
-            // move plant prefab to player location
-            plant.transform.position = _playerTransform.position;
+            PlantSeed();
         }
     }
 
@@ -40,7 +45,17 @@ public class Player : MonoBehaviour
     /// </summary>
     public void PlantSeed ()
     {
-        
+            // spawn plant prefab
+            GameObject plant = Instantiate(_plantPrefab);
+
+            // move plant prefab to player location
+            plant.transform.position = _playerTransform.position;
+
+            // update the seed counter
+            _numSeedsLeft -= 1;
+
+            // update ui (i use _num seeds - _numSeeds left for Seeds Remaining)
+            _plantCountUI.UpdateSeeds(_numSeedsLeft, _numSeeds - _numSeedsLeft);
     }
     
     /// <summary>
