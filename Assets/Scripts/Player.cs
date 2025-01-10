@@ -11,9 +11,6 @@ public class Player : MonoBehaviour
 
     // the number of seeds the player has on them
     private int _numSeedsLeft;
-
-    // not entirely sure why i would want these variables?
-    // they could be usefull but i already have _numSeeds
     private int _numSeedsPlanted;
 
     private void Start ()
@@ -23,9 +20,10 @@ public class Player : MonoBehaviour
 
         // have player seed count match start count
         _numSeedsLeft = _numSeeds;
+        _numSeedsPlanted = 0;
 
         // call ui update so it has the right values
-        _plantCountUI.UpdateSeeds(_numSeedsLeft, 0);
+        _plantCountUI.UpdateSeeds(_numSeedsLeft, _numSeedsPlanted);
     }
 
     private void Update()
@@ -51,11 +49,12 @@ public class Player : MonoBehaviour
             // move plant prefab to player location
             plant.transform.position = _playerTransform.position;
 
-            // update the seed counter
+            // update the seed counters
             _numSeedsLeft -= 1;
+            _numSeedsPlanted += 1;
 
-            // update ui (i use _num seeds - _numSeeds left for Seeds Remaining)
-            _plantCountUI.UpdateSeeds(_numSeedsLeft, _numSeeds - _numSeedsLeft);
+            // update ui with new counts
+            _plantCountUI.UpdateSeeds(_numSeedsLeft, _numSeedsPlanted);
     }
     
     /// <summary>
