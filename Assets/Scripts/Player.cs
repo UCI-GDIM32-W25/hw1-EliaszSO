@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     [SerializeField] private int _numSeeds = 5; 
     [SerializeField] private PlantCountUI _plantCountUI;
 
+    // not entirely sure why i would want these variables?
+    // they could be usefull but i already have _numSeeds
     private int _numSeedsLeft;
     private int _numSeedsPlanted;
 
@@ -22,8 +24,15 @@ public class Player : MonoBehaviour
         // move the player
         MoveFromAxis();
 
-        // plant a seed if the player pressed space
-        
+        // plant a seed if the player pressed space and there are seeds left
+        if (_numSeeds > 0 && Input.GetKeyDown(KeyCode.Space))
+        {
+            // spawn plant prefab
+            GameObject plant = Instantiate(_plantPrefab);
+
+            // move plant prefab to player location
+            plant.transform.position = _playerTransform.position;
+        }
     }
 
     /// <summary>
