@@ -56,7 +56,9 @@ public class Player : MonoBehaviour
         float verticalFloat = Input.GetAxisRaw("Vertical");
 
         // make a vector 2 from the floats denoting the move direction
+        // make it normal for consistant movement speed
         Vector2 moveDirection = new Vector2(horizontalFloat, verticalFloat);
+        moveDirection = moveDirection.normalized;
 
         //transform the player by the move direction * speed fixed with deltatime
         _playerTransform.Translate(moveDirection * _speed * Time.deltaTime);
