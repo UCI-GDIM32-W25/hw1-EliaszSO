@@ -14,6 +14,9 @@ public class Plant : MonoBehaviour
     private Animator _plantAnimator;
 
     private int _growthStage;
+
+    [SerializeField] public Player player;
+    private SpriteRenderer _plantRenderer;
     
 
     void Start()
@@ -22,8 +25,9 @@ public class Plant : MonoBehaviour
         _tickTimer = 0f;
         _timePerTick = 1 / _ticksPerSecond;
 
-        //get animator component
+        //get animator and renderer components
         _plantAnimator = GetComponent<Animator>();
+        _plantRenderer = GetComponent<SpriteRenderer>();
 
         _growthStage = 0;
     }
@@ -31,9 +35,6 @@ public class Plant : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // could run grow here
-        // make seeds fall off when its fully grown
-
         //growth by tick system:
         //increase timer by the amount of time that has passed
         _tickTimer += Time.deltaTime;
@@ -46,6 +47,17 @@ public class Plant : MonoBehaviour
             //reset timer (discounting error amount)
             _tickTimer -= _timePerTick;
             
+        }
+
+        // appear in front/ behind player
+        bool playerInFrontOfPlant = player.transform.position.y < transform.position.y;
+        if (playerInFrontOfPlant)
+        {
+            _plantRenderer.sortingOrder = 4;
+        }
+        else
+        {
+            _plantRenderer.sortingOrder = 6;
         }
     }
 

@@ -44,10 +44,14 @@ public class Player : MonoBehaviour
     public void PlantSeed ()
     {
             // spawn plant prefab
-            GameObject plant = Instantiate(_plantPrefab);
+            GameObject plantObject = Instantiate(_plantPrefab);
 
             // move plant prefab to player location
-            plant.transform.position = _playerTransform.position;
+            plantObject.transform.position = _playerTransform.position;
+
+            // make the plant reference this player
+            Plant plant = plantObject.GetComponent<Plant>();
+            plant.player = this;
 
             // update the seed counters
             _numSeedsLeft -= 1;
