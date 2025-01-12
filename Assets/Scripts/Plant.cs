@@ -19,6 +19,8 @@ public class Plant : MonoBehaviour
     private SpriteRenderer _plantRenderer;
 
     [SerializeField] private bool _doApperance = false;
+
+    [SerializeField] private GameObject _seedObject;
     
 
     void Start()
@@ -68,7 +70,7 @@ public class Plant : MonoBehaviour
             {
                 GrowPlant();
             }
-            else
+            else if (_growthStage < 7)
             {
                 DropSeeds();
             }
@@ -87,6 +89,6 @@ public class Plant : MonoBehaviour
 
     private void DropSeeds()
     {
-        // instantiate a seed?
+        Instantiate(_seedObject, transform.position, transform.rotation);
     }
 }
