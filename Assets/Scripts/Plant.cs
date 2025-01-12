@@ -62,7 +62,16 @@ public class Plant : MonoBehaviour
         
         if (randomValue < _growChance)
         {
-            GrowPlant();
+
+            //groth stage deturmines whether the plant grows or seeds
+            if(_growthStage < 6)
+            {
+                GrowPlant();
+            }
+            else
+            {
+                DropSeeds();
+            }
         }
 
     }
@@ -74,5 +83,10 @@ public class Plant : MonoBehaviour
 
         // cause the animation to change
         _plantAnimator.SetInteger("GrowthLevel", _growthStage);
+    }
+
+    private void DropSeeds()
+    {
+        // instantiate a seed?
     }
 }
