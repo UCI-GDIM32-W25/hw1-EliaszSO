@@ -1,4 +1,3 @@
-using UnityEditor.Search;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -73,8 +72,8 @@ public class Player : MonoBehaviour
             plant.player = this;
 
             // update the seed counters
-            _numSeedsLeft -= 1;
-            _numSeedsPlanted += 1;
+            _numSeedsLeft--;
+            _numSeedsPlanted++;
 
             // update ui with new counts
             _plantCountUI.UpdateSeeds(_numSeedsLeft, _numSeedsPlanted);
