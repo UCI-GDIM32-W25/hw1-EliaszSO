@@ -44,10 +44,7 @@ public class Player : MonoBehaviour
     public void PlantSeed ()
     {
             // spawn plant prefab
-            GameObject plantObject = Instantiate(_plantPrefab);
-
-            // move plant prefab to player location
-            plantObject.transform.position = _playerTransform.position;
+            GameObject plantObject = Instantiate(_plantPrefab, transform.position, Quaternion.identity);
 
             // make the plant reference this player
             Plant plant = plantObject.GetComponent<Plant>();
@@ -75,7 +72,8 @@ public class Player : MonoBehaviour
 
         // make a vector 2 from the floats denoting the move direction
         // make it normal for consistant movement speed
-        Vector2 moveDirection = new Vector2(horizontalFloat, verticalFloat);
+        // the player z is linked to its y
+        Vector3 moveDirection = new Vector3(horizontalFloat, verticalFloat, verticalFloat);
         moveDirection = moveDirection.normalized;
 
         //transform the player by the move direction * speed fixed with deltatime

@@ -291,7 +291,7 @@ Camera:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.3281138, g: 0.5377358, b: 0.21052864, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -341,12 +341,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 7794979932336710822}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &543629222
 GameObject:
@@ -952,15 +952,15 @@ PrefabInstance:
       objectReference: {fileID: 1657858111}
     - target: {fileID: 2755446429015804099, guid: 37185d6fa6ead904ba354f8c0d2cbb23, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5652537
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2755446429015804099, guid: 37185d6fa6ead904ba354f8c0d2cbb23, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.077201076
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2755446429015804099, guid: 37185d6fa6ead904ba354f8c0d2cbb23, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0126356715
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2755446429015804099, guid: 37185d6fa6ead904ba354f8c0d2cbb23, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1000,14 +1000,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2755446429015804099, guid: 37185d6fa6ead904ba354f8c0d2cbb23, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 519420032}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37185d6fa6ead904ba354f8c0d2cbb23, type: 3}
+--- !u!4 &7794979932336710822 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2755446429015804099, guid: 37185d6fa6ead904ba354f8c0d2cbb23, type: 3}
+  m_PrefabInstance: {fileID: 7794979932336710821}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 519420032}
   - {fileID: 7794979932336710821}
   - {fileID: 1657858110}
   - {fileID: 1327915577}
