@@ -49,20 +49,6 @@ public class Plant : MonoBehaviour
         }
     }
 
-    private void AppearBeforeBehind()
-    {
-        // appear in front/ behind player
-        bool playerInFrontOfPlant = player.transform.position.y < transform.position.y;
-        if (playerInFrontOfPlant)
-        {
-            _plantRenderer.sortingOrder = 4;
-        }
-        else
-        {
-            _plantRenderer.sortingOrder = 6;
-        }
-    }
-
     /// <summary>
     /// triggered on ever tick for this game object
     /// </summary>
@@ -73,12 +59,9 @@ public class Plant : MonoBehaviour
         
         if (randomValue < _growChance)
         {
+            GrowPlant();
             
-            if (_growthStage < 6)
-            {
-                GrowPlant();
-            }
-            else if (_growthStage < 7)
+            if (_growthStage == 6)
             {
                 // when the plant is fully grown
                 player.patienceScore++;
@@ -90,7 +73,7 @@ public class Plant : MonoBehaviour
     public void GrowPlant()
     {
         // increase the growth stage
-        _growthStage +=1;
+        _growthStage++;
 
         // cause the animation to change
         _plantAnimator.SetInteger("GrowthLevel", _growthStage);

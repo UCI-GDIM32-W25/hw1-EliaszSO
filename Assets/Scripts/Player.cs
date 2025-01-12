@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
 
     [HideInInspector] public int patienceScore;
     private bool _learnedPatience;
+    [SerializeField] private GameObject _patienceScreen;
 
     private void Start ()
     {
@@ -31,6 +32,7 @@ public class Player : MonoBehaviour
 
         // player does not yet know patience
         _learnedPatience = false;
+        _patienceScreen.SetActive(false);
     }
 
     private void Update()
@@ -45,12 +47,13 @@ public class Player : MonoBehaviour
         }
 
         // patience end screen
-        if (patienceScore == _numSeedsPlanted && !_learnedPatience)
+        if (patienceScore >= 1 && patienceScore == _numSeedsPlanted && !_learnedPatience)
         {
             // player has learned patience
             _learnedPatience = true;
 
             // show patience screen
+            _patienceScreen.SetActive(true);
         }
     }
 
