@@ -51,8 +51,8 @@ public class Player : MonoBehaviour
             plant.player = this;
 
             // update the seed counters
-            _numSeedsLeft -= 1;
-            _numSeedsPlanted += 1;
+            _numSeedsLeft--;
+            _numSeedsPlanted++;
 
             // update ui with new counts
             _plantCountUI.UpdateSeeds(_numSeedsLeft, _numSeedsPlanted);
@@ -78,5 +78,20 @@ public class Player : MonoBehaviour
 
         //transform the player by the move direction * speed fixed with deltatime
         _playerTransform.Translate(moveDirection * _speed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        Debug.Log("Seed!");
+        // do seed actions when interacting with a seed
+        if (other.tag == "Seed")
+        {
+            // get a seed
+            _numSeedsLeft++;
+
+            // delete seed
+            Seed seed = other.GetComponent<Seed>();
+            seed.PickupSeed();
+        }
     }
 }
