@@ -17,6 +17,8 @@ public class Plant : MonoBehaviour
 
     [SerializeField] public Player player;
     private SpriteRenderer _plantRenderer;
+
+    [SerializeField] private bool _doApperance = false;
     
 
     void Start()
@@ -40,15 +42,24 @@ public class Plant : MonoBehaviour
         _tickTimer += Time.deltaTime;
 
         // if timer is greater than time per tick a tick should have been triggered
-        if(_tickTimer >= _timePerTick)
+        if (_tickTimer >= _timePerTick)
         {
             TickEvent();
-            
+
             //reset timer (discounting error amount)
             _tickTimer -= _timePerTick;
-            
+
         }
 
+        // causes the plant to go in front or behind the player
+        if (_doApperance)
+        {
+            AppearBeforeBehind();
+        }
+    }
+
+    private void AppearBeforeBehind()
+    {
         // appear in front/ behind player
         bool playerInFrontOfPlant = player.transform.position.y < transform.position.y;
         if (playerInFrontOfPlant)
