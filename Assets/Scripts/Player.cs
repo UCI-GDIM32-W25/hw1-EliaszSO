@@ -1,9 +1,10 @@
+using UnityEditor.Search;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _speed = 1.0f;
-    [SerializeField] private Transform _playerTransform;
+    private Transform _playerTransform;
     [SerializeField] private GameObject _plantPrefab;
     // the max seeds that the player starts out with
     [SerializeField] private int _numSeeds = 5; 
@@ -12,6 +13,9 @@ public class Player : MonoBehaviour
     // the number of seeds the player has on them
     private int _numSeedsLeft;
     private int _numSeedsPlanted;
+
+    [HideInInspector] public int patienceScore;
+    private bool _learnedPatience;
 
     private void Start ()
     {
@@ -24,6 +28,9 @@ public class Player : MonoBehaviour
 
         // call ui update so it has the right values
         _plantCountUI.UpdateSeeds(_numSeedsLeft, _numSeedsPlanted);
+
+        // player does not yet know patience
+        _learnedPatience = false;
     }
 
     private void Update()
@@ -35,6 +42,15 @@ public class Player : MonoBehaviour
         if (_numSeedsLeft > 0 && Input.GetKeyDown(KeyCode.Space))
         {
             PlantSeed();
+        }
+
+        // patience end screen
+        if (patienceScore == _numSeedsPlanted && !_learnedPatience)
+        {
+            // player has learned patience
+            _learnedPatience = true;
+
+            // show patience screen
         }
     }
 

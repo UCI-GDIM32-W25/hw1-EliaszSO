@@ -10,15 +10,13 @@ public class Plant : MonoBehaviour
     
     // the probability the plant will grow every tick
     [SerializeField] private float _growChance;
-    
     private Animator _plantAnimator;
-
-    private int _growthStage;
-
-    [SerializeField] public Player player;
     private SpriteRenderer _plantRenderer;
 
-    [SerializeField] private bool _doApperance = false;
+    // represents how old the plant is (appearance and patiencePoints)
+    private int _growthStage;
+
+    [HideInInspector] public Player player;
     
 
     void Start()
@@ -48,13 +46,6 @@ public class Plant : MonoBehaviour
 
             //reset timer (discounting error amount)
             _tickTimer -= _timePerTick;
-
-        }
-
-        // causes the plant to go in front or behind the player
-        if (_doApperance)
-        {
-            AppearBeforeBehind();
         }
     }
 
@@ -82,7 +73,16 @@ public class Plant : MonoBehaviour
         
         if (randomValue < _growChance)
         {
-            GrowPlant();
+            
+            if (_growthStage < 6)
+            {
+                GrowPlant();
+            }
+            else if (_growthStage < 7)
+            {
+                // when the plant is fully grown
+                player.patienceScore++;
+            }
         }
 
     }
