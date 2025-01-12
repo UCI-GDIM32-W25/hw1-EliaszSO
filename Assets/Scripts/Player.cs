@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
     /// </summary>
     private void MoveFromAxis()
     {
-        // i like to use the axis floats for movement becayse they let me use the arrow keys 
+        // i like to use the axis floats for movement because they let me use the arrow keys 
         // and WASD with less code overall
 
         // get axis float values from unity event system
@@ -72,8 +72,7 @@ public class Player : MonoBehaviour
 
         // make a vector 2 from the floats denoting the move direction
         // make it normal for consistant movement speed
-        // the player z is linked to its y
-        Vector3 moveDirection = new Vector3(horizontalFloat, verticalFloat, verticalFloat);
+        Vector2 moveDirection = new Vector3(horizontalFloat, verticalFloat);
         moveDirection = moveDirection.normalized;
 
         //transform the player by the move direction * speed fixed with deltatime

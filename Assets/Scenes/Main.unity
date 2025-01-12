@@ -861,11 +861,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1887557878483584684, guid: 1ba94741a8c4c9c40aa6c7cdb61af283, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.21
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1887557878483584684, guid: 1ba94741a8c4c9c40aa6c7cdb61af283, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.02
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1887557878483584684, guid: 1ba94741a8c4c9c40aa6c7cdb61af283, type: 3}
       propertyPath: m_LocalPosition.z
@@ -926,7 +926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1102188669350386180, guid: 48dd0d1d534643b4aaf8799c2d364a3d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1102188669350386180, guid: 48dd0d1d534643b4aaf8799c2d364a3d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -956,26 +956,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2166649187713465517, guid: 48dd0d1d534643b4aaf8799c2d364a3d, type: 3}
-      propertyPath: m_Weight
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2166649187713465517, guid: 48dd0d1d534643b4aaf8799c2d364a3d, type: 3}
-      propertyPath: m_IsLocked
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2166649187713465517, guid: 48dd0d1d534643b4aaf8799c2d364a3d, type: 3}
-      propertyPath: m_TranslationAtRest.z
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2166649187713465517, guid: 48dd0d1d534643b4aaf8799c2d364a3d, type: 3}
-      propertyPath: m_TranslationOffsets.Array.data[0].z
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2166649187713465517, guid: 48dd0d1d534643b4aaf8799c2d364a3d, type: 3}
-      propertyPath: m_Sources.Array.data[0].sourceTransform
-      value: 
-      objectReference: {fileID: 7794979932336710822}
     - target: {fileID: 7496353531709177425, guid: 48dd0d1d534643b4aaf8799c2d364a3d, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -1061,11 +1041,6 @@ PrefabInstance:
       insertIndex: 3
       addedObject: {fileID: 7794979932336710826}
   m_SourcePrefab: {fileID: 100100000, guid: 37185d6fa6ead904ba354f8c0d2cbb23, type: 3}
---- !u!4 &7794979932336710822 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2755446429015804099, guid: 37185d6fa6ead904ba354f8c0d2cbb23, type: 3}
-  m_PrefabInstance: {fileID: 7794979932336710821}
-  m_PrefabAsset: {fileID: 0}
 --- !u!61 &7794979932336710826
 BoxCollider2D:
   m_ObjectHideFlags: 0
