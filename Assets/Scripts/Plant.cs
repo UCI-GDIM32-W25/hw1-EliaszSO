@@ -50,26 +50,6 @@ public class Plant : MonoBehaviour
             _tickTimer -= _timePerTick;
 
         }
-
-        // causes the plant to go in front or behind the player
-        if (_doApperance)
-        {
-            AppearBeforeBehind();
-        }
-    }
-
-    private void AppearBeforeBehind()
-    {
-        // appear in front/ behind player
-        bool playerInFrontOfPlant = player.transform.position.y < transform.position.y;
-        if (playerInFrontOfPlant)
-        {
-            _plantRenderer.sortingOrder = 4;
-        }
-        else
-        {
-            _plantRenderer.sortingOrder = 6;
-        }
     }
 
     /// <summary>

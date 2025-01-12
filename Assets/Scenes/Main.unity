@@ -932,6 +932,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1346321014345521234, guid: 37185d6fa6ead904ba354f8c0d2cbb23, type: 3}
+      propertyPath: _numSeeds
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346321014345521234, guid: 37185d6fa6ead904ba354f8c0d2cbb23, type: 3}
       propertyPath: _plantCountUI
       value: 
       objectReference: {fileID: 1657858111}
