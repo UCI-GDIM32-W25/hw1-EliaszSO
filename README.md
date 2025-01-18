@@ -1,18 +1,11 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/MjLLqDcN)
 # HW1
 ## W1L2 In-Class Activity
-
-Put your notes from the W1L2 (Thurs, Jan 9) in-class activity here.
-
-## Devlog
-Prompt: Include the HW1 break-down exercise you wrote during the Week 1 - Lecture 2 (Jan 9) in-class activity (above). If you did not attend and perform this activity, review the lecture slides and write your own plan for how you believe HW1 should be built. If your initially proposed plan turned out significantly different than the activity answers given by Prof Reid, you may want to note what was different. Then, write about how the plan you wrote in the break-down connects to the code you wrote. Cite specific class names and method names in the code and GameObjects in your Unity Scene.
-Write your Devlog here!
-
 __Objects - Attributes/Actions__
  - Player
    - Looks like a bunni-cat sprite
    - keeps track of the seeds planted and not
-     Up, Down, Left, Right arrows or W S A D keys respectively -> cause player transformation in respective direction
+     - Up, Down, Left, Right arrows or W S A D keys respectively -> cause player transformation in respective direction
    - Space bar and there are seeds not planted -> spawns a plant at the player -> increases planted counter, decreases seeds counter
  - Plant
    - Looks like a plant sprite!
@@ -27,6 +20,7 @@ __Objects - Attributes/Actions__
  - The camera??
    - Does nothing but see (does not move)
 
+## Devlog
 The most signifigant differences between my breakdown and the actual code I wrote is that the Plant object does next to nothing (excluding the effects I added like growing). The actions of the plant are entirely handeled by the player. The attrabutes of the plant do remain however.  
 
 __The Player__  
@@ -42,3 +36,10 @@ The apperance attribute of the UI is handeled by text mesh pro components on a c
 ## Open-Source Assets
 If you added any other outside assets, list them here!
 - [Sprout Lands sprite asset pack](https://cupnooble.itch.io/sprout-lands-asset-pack) - character and item sprites
+
+## Prof comments
+This Devlog was fantastic and very clearly connects the break-down activity, including the object's attributes and actions, to the code that you wrote. Thank you for addressing the prompt, and keep up the good work for future Devlogs!
+
+Also, I liked that you made the plants grow over time! I look forward to seeing what you build for our final project.
+
+Thank you for formatting your Devlog well. Make sure to put your activitiy and Devlog under the correct headers. You can also remove the prompt text. This helps make the Devlogs readable for the grading team. See also the [README formatting guide here](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
